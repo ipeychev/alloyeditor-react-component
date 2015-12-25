@@ -2,15 +2,15 @@ var React = require('react');
 var AlloyEditor = require('alloyeditor');
 
 var AlloyEditorComponent = React.createClass({
-	componentDidMount: function() {
-	   this._editor = AlloyEditor.editable(this.props.container, this.props.alloyEditorConfig);
-	},
+    componentDidMount: function() {
+       this._editor = AlloyEditor.editable(this.props.container, this.props.alloyEditorConfig);
+    },
 
-	componentWillUnmount: function() {
-	   this._editor.destroy();
-	},
+    componentWillUnmount: function() {
+       this._editor.destroy();
+    },
 
-	render: function() {
+    render: function() {
         return (
             <div id={this.props.container}>
                 <h1>AlloyEditor will make this content editable</h1>
