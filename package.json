@@ -1,13 +1,14 @@
 {
   "name": "alloyeditor-react-component",
-  "repository": "https://github.com/ipeychev/alloyeditor-react-component.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ipeychev/alloyeditor-react-component.git"
+  },
   "description": "An example usage of AlloyEditor on the server and in the browser",
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
-    "alloyeditor": "^0.7.3"
-  },
-  "devDependencies": {
+    "alloyeditor": "^0.7.3",
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
@@ -26,6 +27,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/ipeychev/alloyeditor-react-component/issues"
   },
   "author": "Iliyan Peychev <iliyan.peychev@gmail.com>",
   "license": "MIT"
