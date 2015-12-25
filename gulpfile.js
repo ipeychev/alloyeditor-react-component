@@ -1,15 +1,20 @@
 var del = require('del');
+var envify = require('gulp-envify');
 var gulp = require('gulp');
 var gutil = require('gutil');
 var path = require('path');
 var runSequence = require('run-sequence');
 var template = require('gulp-template');
+var uglify = require('gulp-uglify');
 var webpack = require('webpack');
 
 gulp.task('webpack', function(callback) {
     // run webpack
     webpack({
-        entry: './src/client.js',
+        entry: {
+            app: './src/client.js',
+            vendor: ['alloyeditor', 'react', 'react-dom'],
+        },
         output: {
             filename: './dist/bundle.js'
         },
@@ -25,7 +30,10 @@ gulp.task('webpack', function(callback) {
                     }
                 }
             ]
-        }
+        },
+        plugins: [
+            new webpack.optimize.CommonsChunkPlugin('vendor', './dist/vendor.bundle.js')
+        ]
     }, function(err) {
         if (err) {
             throw new gutil.PluginError('webpack', err);
@@ -55,12 +63,25 @@ gulp.task('default', function(callback) {
     runSequence(['build'], callback);
 });
 
+gulp.task('minimize', function() {
+    return gulp.src(['dist/bundle.js', 'dist/vendor.bundle.js'])
+        .pipe(envify())
+        .pipe(uglify())
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.task('render-on-server', function () {
     return gulp.src('src/index.html')
         .pipe(template({
             content: require('./src/server')()
         }))
         .pipe(gulp.dest('dist'));
+});
+
+gulp.task('release', function(callback) {
+    process.env.NODE_ENV = 'production';
+
+    runSequence('build', 'minimize', callback);
 });
 
 gulp.task('watch', ['build'], function(callback) {

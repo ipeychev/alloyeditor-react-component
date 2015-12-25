@@ -1,5 +1,5 @@
 var React = require('react');
-var AlloyEditor = require('../node_modules/alloyeditor/dist/alloy-editor/alloy-editor-no-react.js');
+var AlloyEditor = require('alloyeditor');
 
 var AlloyEditorComponent = React.createClass({
 	componentDidMount: function() {
