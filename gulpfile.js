@@ -8,6 +8,8 @@ var template = require('gulp-template');
 var uglify = require('gulp-uglify');
 var webpack = require('webpack');
 
+var renderOnServer = require('./src/server');
+
 gulp.task('webpack', function(callback) {
     // run webpack
     webpack({
@@ -73,7 +75,7 @@ gulp.task('minimize', function() {
 gulp.task('render-on-server', function () {
     return gulp.src('src/index.html')
         .pipe(template({
-            content: require('./src/server')()
+            content: renderOnServer()
         }))
         .pipe(gulp.dest('dist'));
 });
