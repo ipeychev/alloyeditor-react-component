@@ -3,11 +3,11 @@ var AlloyEditor = require('alloyeditor');
 
 var AlloyEditorComponent = React.createClass({
     componentDidMount: function() {
-       this._editor = AlloyEditor.editable(this.props.container, this.props.alloyEditorConfig);
+        this._editor = AlloyEditor.editable(this.props.container, this.props.alloyEditorConfig);
     },
 
     componentWillUnmount: function() {
-       this._editor.destroy();
+        this._editor.destroy();
     },
 
     render: function() {
