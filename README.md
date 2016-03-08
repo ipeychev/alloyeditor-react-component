@@ -38,10 +38,13 @@ To run the project in production, execute `npm run release`. The files will be m
 I don't want to copy AlloyEditor to the dist folder like you did!
 -------------
 Sure, then please change the `index.html` to something like this:
+
+```
 <script>
   window.ALLOYEDITOR_BASEPATH = '../node_modules/alloyeditor/dist/alloy-editor/';
   window.CKEDITOR_BASEPATH = '../node_modules/alloyeditor/dist/alloy-editor/';
 </script>
+```
 
 And it should start working.
 
