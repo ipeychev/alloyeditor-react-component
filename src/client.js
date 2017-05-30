@@ -1,6 +1,6 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var AlloyEditorComponent = require('./alloyeditor');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import AlloyEditorComponent from './alloyeditor';
 
 ReactDOM.render(React.createElement(AlloyEditorComponent, {
 	container: 'editable'
