@@ -50,108 +50,144 @@
 	content: "\";
 }
 
-.ae-icon-bold:before {
+.ae-icon-audio:before {
 	content: "\";
 }
 
-.ae-icon-bulleted-list:before {
+.ae-icon-bin:before {
 	content: "\";
 }
 
-.ae-icon-camera:before {
+.ae-icon-bold:before {
 	content: "\";
 }
 
-.ae-icon-cell:before {
+.ae-icon-bulleted-list:before {
 	content: "\";
 }
 
-.ae-icon-close:before {
+.ae-icon-camera:before {
 	content: "\";
 }
 
-.ae-icon-code:before {
+.ae-icon-cell:before {
 	content: "\";
 }
 
-.ae-icon-column:before {
+.ae-icon-close:before {
 	content: "\";
 }
 
-.ae-icon-h1:before {
+.ae-icon-code:before {
 	content: "\";
 }
 
-.ae-icon-h2:before {
+.ae-icon-column:before {
 	content: "\";
 }
 
-.ae-icon-image:before {
+.ae-icon-embed:before {
 	content: "\";
 }
 
-.ae-icon-italic:before {
+.ae-icon-folder:before {
 	content: "\";
 }
 
-.ae-icon-link:before {
+.ae-icon-h1:before {
 	content: "\";
 }
 
-.ae-icon-numbered-list:before {
+.ae-icon-h2:before {
 	content: "\";
 }
 
-.ae-icon-ok:before {
+.ae-icon-image:before {
 	content: "\";
 }
 
-.ae-icon-quote:before {
+.ae-icon-indent-block:before {
 	content: "\";
 }
 
-.ae-icon-remove:before {
+.ae-icon-italic:before {
 	content: "\";
 }
 
-.ae-icon-removeformat:before {
+.ae-icon-link:before {
 	content: "\";
 }
 
-.ae-icon-row:before {
+.ae-icon-numbered-list:before {
 	content: "\";
 }
 
-.ae-icon-separator:before {
+.ae-icon-ok:before {
 	content: "\";
 }
 
-.ae-icon-strike:before {
+.ae-icon-outdent-block:before {
 	content: "\";
 }
 
-.ae-icon-subscript:before {
+.ae-icon-quote:before {
 	content: "\";
 }
 
-.ae-icon-superscript:before {
+.ae-icon-redo:before {
 	content: "\";
 }
 
-.ae-icon-table:before {
+.ae-icon-remove:before {
 	content: "\";
 }
 
-.ae-icon-twitter:before {
+.ae-icon-removeformat:before {
 	content: "\";
 }
 
-.ae-icon-underline:before {
+.ae-icon-row:before {
 	content: "\";
 }
 
-.ae-icon-unlink:before {
+.ae-icon-separator:before {
 	content: "\";
+}
+
+.ae-icon-strike:before {
+	content: "\";
+}
+
+.ae-icon-subscript:before {
+	content: "\";
+}
+
+.ae-icon-superscript:before {
+	content: "\";
+}
+
+.ae-icon-table:before {
+	content: "\";
+}
+
+.ae-icon-twitter:before {
+	content: "\";
+}
+
+.ae-icon-underline:before {
+	content: "\";
+}
+
+.ae-icon-undo:before {
+	content: "\";
+}
+
+.ae-icon-unlink:before {
+	content: "\";
+}
+
+.ae-icon-video:before {
+	content: "\";
 }
 @charset "UTF-8";
 /** GENERAL VARIABLES */
@@ -172,8 +208,9 @@
  * the CSS of nested components or components which
  * stay on the same level in the hierarchy.
  */
-.ae-placeholder:empty:not(:focus):before {
-  content: attr(data-placeholder); }
+.ae-placeholder:not(:focus):before {
+  content: attr(data-placeholder);
+  position: absolute; }
 
 .ae-twitter-link {
   padding: 0 5px; }
@@ -193,7 +230,7 @@
   border: 0; }
 
 .ae-ui IE10-PLUS::-ms-reveal, .ae-ui [class^=ae-toolbar] {
-  height: 28px;
+  height: auto;
   box-sizing: content-box; }
 
 .ae-ui .ae-toolbar, .ae-ui [class^=ae-toolbar-] {
@@ -233,6 +270,10 @@
   .ae-ui .ae-toolbar-add .ae-button {
     height: 28px;
     width: 26px; }
+
+.ae-ui .ae-toolbar-styles {
+  box-sizing: border-box;
+  max-width: 100%; }
 
 .ae-ui .ae-arrow-box:after {
   content: '';
@@ -534,6 +575,7 @@
 /** ARROW-BOX **/
 /** BUTTON-BRIDGE **/
 /** DROPDOWN-LISTBOX HEADER **/
+/** DROPDOWN-LIST **/
 /** TOOLBAR **/
 .ae-editable ::-moz-selection {
   background: #e6f1fa !important;
@@ -548,7 +590,7 @@
 .ae-twitter-link {
   background-color: #f8f8f8; }
   .ae-twitter-link:after {
-    content: "";
+    content: "";
     font-family: alloyeditor-mono; }
 
 .ae-ui .ae-arrow-box.ae-arrow-box-bottom:after {
@@ -629,6 +671,8 @@
     font-style: italic; }
   .ae-ui .ae-dropdown .ae-listbox .ae-toolbar-element:hover, .ae-ui [class^=ae-dropdown-] .ae-listbox .ae-toolbar-element:hover {
     background-color: #fcfcfc; }
+  .ae-ui .ae-dropdown .ae-listbox .ae-toolbar-element.active, .ae-ui [class^=ae-dropdown-] .ae-listbox .ae-toolbar-element.active {
+    color: #cfd1cf; }
 
 .ae-ui .ae-toolbar, .ae-ui [class^=ae-toolbar-] {
   background-color: #cfd1cf;
